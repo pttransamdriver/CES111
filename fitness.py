@@ -22,6 +22,7 @@ def calculate_bmi(weight_kg, height_cm):
 
 
 def calculate_bmr(weight_kg, height_cm, age, if_male):
+    # If else loop to check for male
     if if_male:
         # BMR formula for men
         return 88.362 + 13.397 * weight_kg + 4.799 * height_cm - 5.677 * age

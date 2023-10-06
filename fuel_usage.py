@@ -35,7 +35,7 @@ def miles_per_gallon(start_miles, end_miles, amount_gallons):
         amount_gallons: A fuel amount in U.S. gallons.
     Return: Fuel efficiency in miles per gallon.
     """
-    # This defines the veriables that are called when the function is called. 
+    # This defines the variables that are called when the function is called. 
     miles_traveled = end_miles - start_miles
     mpg = miles_traveled / amount_gallons
     return mpg

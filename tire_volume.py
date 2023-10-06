@@ -37,7 +37,7 @@ current_date = datetime.datetime.now().strftime("%Y-%m-%d")  # Format the date a
 
 # Opening the volumes.txt file for appending
 with open("volumes.txt", "a") as file:
-    # Appending the required values to the file
+    # File function to append the required values to the file
     file.write(f"{current_date}, {width_tire}, {aspect_width}, {wheel_diamet}, {tire_volume:.2f}\n")
 
 print(f"Your tires have {tire_volume:.2f} liters of air in them")

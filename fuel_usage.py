@@ -8,21 +8,23 @@ Professor: Christian Eisinger
 
 '''
 This isn't too bad, to start we take the user inputs of:
-1) Milage start
-2) Milage end
-3) Fuel used
-Let's call the user inputs as the assignment asks:
-1) start_miles
-2) end_miles
-3) amount_gallons
-We'll do this with the "start_miles = float(input("Enter the starting odomete miles : "))
-but we'll put that into the function definition "def" instead of out by itself like we did last semester
+1) Milage start aka "start_miles"
+2) Milage end aka the variabe "end_miles"
+3) Fuel used aka the variable "amount_gallons"
+
+So the method here is to define the functions "def" that we'll need to call when we want them
+We could do this without functions and just using variables to accompish the task of this assignment 
+but that woun't help us get used to using functions
+
+So let's start with the calculations functions first then use those for the main function "main()"
 '''
 
-# Defines a function called "miles_per_gallon" that takes the three variables 
-#  "start_miles, end_miles, amount_gallons" 
+# Defines a function called "miles_per_gallon" that takes the three parameters  
+#  1) start_miles
+#  2) end_miles 
+#  3) amount_gallons 
 # Remmeber that each of these functions only runs if they are called:
-# To call this function use the name "miles_per_gallon"
+# To call this function use the name "miles_per_gallon" this is done later inside the "main()" function
 def miles_per_gallon(start_miles, end_miles, amount_gallons):
     """Compute and return the average number of miles
     that a vehicle traveled per gallon of fuel.
@@ -38,7 +40,7 @@ def miles_per_gallon(start_miles, end_miles, amount_gallons):
     mpg = miles_traveled / amount_gallons
     return mpg
 
-#To call this function, use the term "lp100k_from_mpg()"
+# To call this function, use the term "lp100k_from_mpg()" which is done later inside the "main()" function
 def lp100k_from_mpg(mpg):
     """Converts miles per gallon to liters per 100
     kilometers and return the converted value.
@@ -51,26 +53,25 @@ def lp100k_from_mpg(mpg):
 
 # This is the main fuction that gets called 
 def main():
-    # Get an odometer value in miles from the user.
+    # Get the start odometer miles from the user.
     start_miles = float(input("Enter the starting odometer value (miles): "))
 
-    # Get another odometer value in miles from the user.
+    # Get the end odometer miles from the user.
     end_miles = float(input("Enter the ending odometer value (miles): "))
 
-    # Get a fuel amount in gallons from the user.
+    # Get a fuel amount in gallons used from the user.
     amount_gallons = float(input("Enter the amount of fuel (gallons): "))
 
-    # Call the miles_per_gallon function and store the result in a variable "mpg".
+    # Call the miles_per_gallon function from above and store the result in a variable "mpg".
     mpg = miles_per_gallon(start_miles, end_miles, amount_gallons)
 
-    # Call the lp100k_from_mpg function to convert the miles per gallon to liters per 100 kilometers
-    # and store the result in a variable named lp100k.
+    # Call the lp100k_from_mpg function to convert mpg to lp100km and make the variable lp100k.
     lp100k = lp100k_from_mpg(mpg)
 
-    # Display the results for the user to see.
+    # Display the results.
     print(f"Fuel efficiency: {mpg:.2f} miles per gallon")
     print(f"Fuel efficiency: {lp100k:.2f} liters per 100 kilometers")
 
 
-# Call the main function so that this program will start executing.
+# Call the main function from above
 main()

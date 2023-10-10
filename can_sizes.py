@@ -7,7 +7,7 @@ Professor: Christian Eisinger
 
 import math 
 
-#List stating the can sizes and costs 
+#List stating the can names, sizes and costs 
 can_sizes = [
     {"name": "#1 Picnic",  "radius": 6.83,  "height": 10.16, "cost": 0.28},
     {"name": "#1 Tall",    "radius": 7.78,  "height": 11.91, "cost": 0.43},
@@ -22,5 +22,24 @@ can_sizes = [
     {"name": "#300",       "radius": 7.62,  "height": 11.27, "cost": 0.38},
     {"name": "#303",       "radius": 8.10,  "height": 11.11, "cost": 0.42},]
 
+# Function to compute the volume of the cans
+def compute_volume(radius, height):
+    volume_1 = math.pi * radius**2 * height
+    return volume_1
+
+#Function to compute the surface area of the cans
+def compute_surface_area(radius, height):
+    suface_area = 2 * math.pi * radius * (radius + height)
+    return suface_area
+
+
+def compute_storage_efficiency(volume, surface_area):
+    vol_efficiency = volume / surface_area
+    return vol_efficiency
+
+
+def compute_cost_efficiency(volume, cost):
+    cost_efficiency = volume / cost
+    return cost_efficiency
 
 

@@ -42,4 +42,16 @@ def compute_cost_efficiency(volume, cost):
     cost_efficiency = volume / cost
     return cost_efficiency
 
+def main():
+    for can in can_sizes:
+        volume = compute_volume(can["radius"], can["height"])
+        surface_area = compute_surface_area(can["radius"], can["height"])
+        storage_efficiency = compute_storage_efficiency(volume, surface_area)
+        cost_efficiency = compute_cost_efficiency(volume, can["cost"])
 
+        print(f"Can Size: {can['name']}")
+        print(f"Storage Efficiency: {storage_efficiency:.2f}")
+        print(f"Cost Efficiency: {cost_efficiency:.2f}")
+        print()
+
+main()

@@ -42,6 +42,8 @@ def get_verb(quantity_3a, tense):
     present_plural_verbs   = ["drink", "eat", "grow", "laugh", "think", "run", "sleep", "talk", "walk", "write"]
     future_verbs = [f"will {verb}" for verb in present_plural_verbs]
 
+    # This 'if' statment checks to see if the 'tense' parameter that is passed to the function when
+    # it's called the if statment returns a 'random.choice' from the 'past_verbs' 
     if tense == "past":
         return random.choice(past_verbs)
     elif tense == "present":

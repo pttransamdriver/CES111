@@ -68,7 +68,8 @@ def get_preposition():
     return random.choice(prepositions)
 
 
-# Define the "get_prepositional_phrase"function that takes from the  
+# Define the "get_prepositional_phrase" function that takes from the list of prepositions and 
+# combines it with a deteminer and a noun to make a prepositional phrase. 
 def get_prepositional_phrase(quantity):
     preposition = get_preposition()
     determiner  = get_determiner(quantity)
@@ -80,15 +81,16 @@ def get_prepositional_phrase(quantity):
 # "make_sentance" is called. Then it calls the the "get_determiner", "get_noun" and the "get_verb"
 # functions in that order
 def make_sentence(quantity_3b, tense):
-    determiner = get_determiner(quantity_3b)
-    noun       = get_noun(quantity_3b)
-    verb       = get_verb(quantity_3b, tense)
+    determiner  = get_determiner(quantity_3b)
+    noun        = get_noun(quantity_3b)
+    verb        = get_verb(quantity_3b, tense)
+    prep_phrase = get_prepositional_phrase(quantity=any)
 
     # Capitalize the first letter of the sentence
     determiner = determiner.capitalize()
 
     # Build the sentence
-    sentence = f"{determiner} {noun} {verb}."
+    sentence = f"{determiner} {noun} {verb} {prep_phrase}."
 
     return sentence
 

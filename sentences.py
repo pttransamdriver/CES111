@@ -4,7 +4,7 @@ Author: Tim Illguth
 Instructor: Christian Eisingers
 Filename: sentances.py
 """
-
+# import the random capability which is in itself a function that someone smarter than me wrote :D
 import random
 
 # Defines the function "get_determiner()". When the "get_determiner" is called, whatever is inside the 
@@ -54,12 +54,35 @@ def get_verb(quantity_3a, tense):
     elif tense == "future":
         return random.choice(future_verbs)
 
-# Defines the "make_sentance" function. This function is called when the "sentences =" portion of
-# the "main" function is run. 
+# Define the "get_preposition" function as a function that randomly chooses 
+# from the list of preposition elements
+def get_preposition():
+    prepositions = [
+        "about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"
+    ]
+    return random.choice(prepositions)
+
+
+# Define the "get_prepositional_phrase"function that takes from the  
+def get_prepositional_phrase(quantity):
+    preposition = get_preposition()
+    determiner  = get_determiner(quantity)
+    noun        = get_noun(quantity)
+    return f"{preposition} {determiner} {noun}"
+
+
+# Defines the "make_sentance" function. This function is called when the "main()" function's 
+# "make_sentance" is called. Then it calls the the "get_determiner", "get_noun" and the "get_verb"
+# functions in that order
 def make_sentence(quantity_3b, tense):
     determiner = get_determiner(quantity_3b)
-    noun = get_noun(quantity_3b)
-    verb = get_verb(quantity_3b, tense)
+    noun       = get_noun(quantity_3b)
+    verb       = get_verb(quantity_3b, tense)
 
     # Capitalize the first letter of the sentence
     determiner = determiner.capitalize()

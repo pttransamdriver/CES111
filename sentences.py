@@ -7,13 +7,15 @@ Filename: sentances.py
 # import the random capability which is in itself a function that someone smarter than me wrote :D
 import random
 
-# Defines the function "get_determiner()". When the "get_determiner" is called, whatever is inside the 
-# "get_determiner(place_stuff_here)" is called that given parameter goes through the function
-# if statment. That <place_stuff_here> I mentioned earlier, is represented by the variable "quantity"
-def get_determiner(quantity_1): 
+# Defines the function "get_determiner()". This function is called when the "get_determiner()" is called
+# What it does is takes the parameter "quantity_deter" which is just basically a placeholder of "1" 
+# when the "get_determiner" is called. It takes that placeheld "quantity_deter" and checks to see if
+# it meets the criteria of the if statement by equaling "1" or some other number. Then it randomizes the 
+# word and returns the randomized word. 
+def get_determiner(quantity_deter): 
     # If statement that looks at "determiner = get_determiner(quantity_3b)" values that come from the 
     # "quantity_3a" if statments and uses that to plug into this "quantity_1" variable. 
-    if quantity_1 == 1:
+    if quantity_deter == 1:
         words = ["a", "one", "the"]
     else:
         words = ["some", "many", "the"]
@@ -30,12 +32,12 @@ def get_noun(quantity_of_nouns):
     plural_nouns = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"]
     
     if quantity_of_nouns == 1:
-        return random.choice(single_nouns)
+        return random.choice(single_nouns).capitalize()
     else:
-        return random.choice(plural_nouns)
+        return random.choice(plural_nouns).capitalize() 
 
 # Defines the "get_verb() function. This function is called when the "verb = get_verb(quantity_3b, tense)" 
-# is called. This is called when the "def make_sentence(quantity_3b, tense)" is called like the rest 
+# is called. This is called when the "def make_sentence(quantity_of_tenses, tense)" is called like the rest 
 # of the funtions are called. 
 def get_verb(quantity_of_tenses, tense):
     past_verbs             = ["drank", "ate", "grew", "laughed", "thought", "ran", "slept", "talked", "walked", "wrote"]
@@ -80,7 +82,8 @@ def get_prepositional_phrase(quantity):
 
 # Defines the "make_sentance" function. This function is called when the "main()" function's 
 # "make_sentance" is called. Then it calls the the "get_determiner", "get_noun" and the "get_verb"
-# functions in that order
+# functions in that order. this combines into a sentence by calling the "get_determiner", "get_noun", "get_verb", and 
+# get_prepositional_phrase functions. 
 def make_sentence(quantity_of_sentance, tense):
     determiner  = get_determiner(quantity_of_sentance)
     noun        = get_noun(quantity_of_sentance)

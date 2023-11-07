@@ -15,11 +15,11 @@ def test_make_full_name():
     assert make_full_name("George", "Washington") == "Washington; George"
 
 def test_extract_family_name():
-    assert extract_family_name("Toussaint; Marie") == "Toussaint"
+    assert extract_family_name("Toussaint; Marie")   == "Toussaint"
     assert extract_family_name("Washington; George") == "Washington"
 
 def test_extract_given_name():
-    assert extract_given_name("Toussaint; Marie") == "Marie"
+    assert extract_given_name("Toussaint; Marie")   == "Marie"
     assert extract_given_name("Washington; George") == "George"
 
 # Call the main function that is part of pytest so that the

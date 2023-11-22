@@ -110,7 +110,7 @@ def main():
 
     # Printing name and atomic mass for each element
     for element in periodic_table:
-        print(f"{element[1]} ({element[0]}) has the Atomic Mass of: {element[2]}")
+        print(f"{element[1]} {element[2]}")
 
 main()
 
